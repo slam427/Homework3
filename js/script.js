@@ -26,9 +26,10 @@ console.log(allCharSet);
 
 // Write password to the #password input
 function writePassword (){
-
-}
-
+  var passwordLength = prompt("How many characters wouold you like your password to be?", "value must be from 8-128");
+  console.log(passwordLength);
+  for (var i = 8; i < 129; i++) {
+  }
 
   var passwordText = document.querySelector("#password");
 
