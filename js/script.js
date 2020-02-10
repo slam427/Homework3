@@ -31,14 +31,32 @@ function writePassword() {
       var numYes     = confirm("Would you like to include Numbers?")
     
   var password = generatePassword(); {
-    while(password !== passwordLength) {
-  Math.floor.Math.random() * charsetArray.length();
-  console.log(password);
+  while(password !== passwordLength) {
+      if(bigAZYes === false && smallAZYes === false && symYes === false && numYes === false) {
+        alert("You must select at least 1 criteria!")
+
+      if(bigAZYes === true && smallAZyes === true && symYes === true && numYes === true) {
+      password = Math.floor(Math.random() * charSetArray.length); 
+      } else 
+
+      if(bigAZYes === false && smallAZyes === true && symYes === true && numYes === true) {
+        password = Math.floor(Math.random() * );
+
+      if(bigAZYes === false && smallAZyes === false && symYes === true && numYes === false) {
+          password = Math.floor(Math.random() * rndSym.length);
+
+      if(bigAZYes === false && smallAZyes === false && symYes === false && numYes === true) {
+            password = Math.floor(Math.random() * rndNum.length)
+      // // }
+      // }
+  // console.log(password);
   }
+
+}
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-}
