@@ -17,37 +17,39 @@ var numSet = "1234567890";
 
 function writePassword() {
 
-  var parsedPasswordLength;
+  var keepLooping = true;
+
   // not returning prompt when 8 >input> 128...can't figure out why...
   //While statement does not work 
-
+  console.log("console log");
   //while not equal to parsedPasswordLength continue to perform the following...
-  while (!parsedPasswordLength) {
-
+  while (keepLooping) {
+  console.log("inside loop")
     //My intentions: User is prompted to input a value between 8-128
     var passwordLength = prompt("How many characters would you like your password to be?", "value must be from '8-128'");
     
-    // console.log("passwordLength check", passwordLength);===================================================***ISSUE*** Expected to be str. Returns 'undefined'?!!!! 
-
+    // console.log("passwordLength check", passwordLength);===================================================***ISSUE*** Expected to be str. Returns 'undefined'?!
     //User input of number value is interpreted by JS as str; Must parseInt to convert into an integer
     var parsedPasswordLength = parseInt(passwordLength);
 
-    // console.log("parsedPasswordLength Check", passwordLength);===========================================================***ISSUE*** Also Returns 'undefined'...
+    console.log({passwordLength})
+    console.log({parsedPasswordLength})
 
     //Conditional statement: if the input meets conditions...
-      if (parsedPasswordLength <= 8 && parsedPasswordLength <= 128) {
-
+      if (parsedPasswordLength >= 8 && parsedPasswordLength <=128) {
+        console.log("condition true")
         //parsedPasswordLength is set to true and exits 'while loop'
-        parsedPasswordLength = true;
+        keepLooping = false;
     }
   }
 
-  
+
   var smallAZArray = charSetSmall.split("");
   var rndSym = "!@#$%^&*()_-+/?".split("");
   var rndNum = numSet.split("");
-  var criteriaArray = [];
   var bigAZArray = charSetBig.split("");
+  
+  var criteriaArray = [];
 
 
             //Adds Upper Case letters to criteriaArray
